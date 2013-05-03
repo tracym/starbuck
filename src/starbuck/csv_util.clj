@@ -31,6 +31,6 @@
 (defn seq-map-to-csv 
   "Take a sequence of maps and convert it into a csv file again"
   [seq-map]
-  (concat (csv/write-csv [(map name (keys (first seq-map)))])
+  (str (csv/write-csv [(map name (keys (first seq-map)))])
           (csv/write-csv (for [m seq-map] (vec (map str (vals m))))
             )))
