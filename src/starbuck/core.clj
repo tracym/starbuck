@@ -54,11 +54,11 @@
 
 
 (defn filter-seq-by-map 
-	"Filter a map of sequences by a column and value"
+	"Filter a sequence of maps by a column and value (contained in a map)"
 	 [seq-map keyval-map]
 	(filter #(= (% (key keyval-map)) (val keyval-map)) seq-map))
 
 (defn filter-seq-by-multiple
-	"Filter a map of sequences by a map of criteria"
+	"Filter a sequence of maps by a map of criteria"
 	[seq-map filter-criteria]
 	(reduce filter-seq-by-map seq-map filter-criteria))
