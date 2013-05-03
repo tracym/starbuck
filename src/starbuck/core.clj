@@ -15,8 +15,10 @@
   (merge-with #(or %1 %2) lmap
     (empty-unioned-map lmap rmap)))
 
-(defn left-join-maps 
-  "Lamely simulate a sql left join on two sequences of maps."
+(defn left-join-seq-maps
+  "Lamely simulate a sql left join on two sequences of maps.
+   So, if a row's (or map's) keycol value from lmap is found in rmap, merge
+   the rows (or maps), else merge lmap row with nils."
   [lmap rmap keycol]
   (pmap 
     (fn [m] (let [res (filter #(= (% keycol) (m keycol)) rmap)]
@@ -38,7 +40,8 @@
 
 
 (defn filter-seq-by-map 
-	"Filter a sequence of maps by a column and value (contained in a map)"
+	"Filter a sequence of maps by a column and value (contained in a map).
+	 Note that we are only using equality for a comparison now."
 	 [seq-map keyval-map]
 	(filter #(= (% (key keyval-map)) (val keyval-map)) seq-map))
 
