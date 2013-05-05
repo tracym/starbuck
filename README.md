@@ -11,6 +11,7 @@ Add this `:dependency` to your Leiningen
 
 ```clojure
 [starbuck "0.1.0-SNAPSHOT"]
+```
 
 ## TODO
 * Write some tests
