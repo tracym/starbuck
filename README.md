@@ -4,6 +4,14 @@ A library of clojure functions I used to perform tabular data manipulations. Com
 with database data. Apologies for ill-documented code pulled from a more ambitious personal 
 project that I only vaguely remember.
 
+## Installation
+
+Add this `:dependency` to your Leiningen
+`project.clj`:
+
+```clojure
+[starbuck "0.1.0-SNAPSHOT"]
+
 ## TODO
 * Write some tests
 * Add support for excel directly instead of relying soley on csv files
