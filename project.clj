@@ -7,4 +7,7 @@
   				 [org.clojure/java.jdbc "0.3.0-alpha1"]
   				 [postgresql/postgresql "8.4-702.jdbc4"]
 		 		 [clojure-csv/clojure-csv "2.0.0-alpha1"]
-		 		 [net.sourceforge.jtds/jtds "1.2.4"]])
+		 		 [net.sourceforge.jtds/jtds "1.2.4"]]
+
+  :repl-options {:init (use 'starbuck.core 'starbuck.csv-util 'starbuck.sql-util)}
+)
